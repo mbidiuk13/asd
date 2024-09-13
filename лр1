@@ -1,17 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h> //для функції abs()
-int main() {
-    int a, b;
-    float x, y;
+#include <math.h> //для функції fabs()
+int main() 
+{
+    float a, b;
+
     //введення значень а та b
     printf("Enter the value of a: ");
-    scanf("%d", &a);
+    scanf("%f", &a);
     printf("Enter the value of b: ");
-    scanf("%d", &b);
+    scanf("%f", &b);
+
     //обчислення х
-    x = (float)((a+b-abs(a-b))/4);
+    float x = (float)((a+b-fabs(a-b))/4.0);
+    
     //обчислення у
-    y = 3*x+5;
+    float y = 3*x+5;
     //виведення результату
     printf("The value of y is %.2f\n", y);
     return 0;
