@@ -12,24 +12,25 @@ int main() {
     float D = pow(p,2) - 4.0 * (-q);
 
     if (D > 0) {
-        // Два різних корені
+        //два різних корені
         float x1 = (p - sqrt(D)) / 2.0;
         float x2 = (p + sqrt(D)) / 2.0;
         float sum = pow(x1, 3) + pow(x2, 3);
         printf("Root equations: x1 = %.2f, x2 = %.2f\n", x1, x2);
         printf("sum = %.2f\n", sum);
     } else if (D == 0) {
-        // Один корінь
+        //один корінь
         float x = p / 2.0;
         float lg = log10(fabs(x));
         printf("The equation has one root: x1 = %.2f\n", x);
         printf("lg|x1| = %.2f\n", lg);
     }
     else {
-        // Немає дійсних коренів
+        //немає дійсних коренів
         printf("The equation has no roots.\n");
-        float div = (p + q) / (p * q);
-        printf("rat = %.2f\n", div);
+        float numerator = p + q;
+        float denominator = p * q;
+        printf("rat = (%.2f / %.2f)\n", numerator, denominator);
     }
     return 0;
 }
