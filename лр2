@@ -3,32 +3,33 @@
 
 int main() {
     float p=0, q=0;
-    printf("Введіть коефіцієнт p: ");
+    printf("Here is your equation: x^2-px-q=0\n");
+    printf("Enter the value of p: ");
     scanf("%f", &p);
-    printf("Введіть коефіцієнт q: ");
+    printf("Enter the value of q: ");
     scanf("%f", &q);
 
-    float D = pow(p,2) + 4.0 * q;
+    float D = pow(p,2) - 4.0 * (-q);
 
     if (D > 0) {
         // Два різних корені
-        float x1 = (p + sqrt(D)) / 2.0;
-        float x2 = (p - sqrt(D)) / 2.0;
+        float x1 = (p - sqrt(D)) / 2.0;
+        float x2 = (p + sqrt(D)) / 2.0;
         float sum = pow(x1, 3) + pow(x2, 3);
-        printf("Корені рівняння: x1 = %.2f, x2 = %.2f\n", x1, x2);
-        printf("Сума кубів коренів: sum = %.2f\n", sum);
+        printf("Root equations: x1 = %.2f, x2 = %.2f\n", x1, x2);
+        printf("sum = %.2f\n", sum);
     } else if (D == 0) {
         // Один корінь
-        float x = -p / 2.0;
+        float x = p / 2.0;
         float lg = log10(fabs(x));
-        printf("Рівняння має один корінь: x1 = %.2f\n", x);
+        printf("The equation has one root: x1 = %.2f\n", x);
         printf("lg|x1| = %.2f\n", lg);
     }
-        else {
+    else {
         // Немає дійсних коренів
-        printf("Рівняння не має коренів.\n");
-        float div = (p + q) / p * q;
-        printf("Відношення (p + q) / pq: %.2f\n", div);
-        }
+        printf("The equation has no roots.\n");
+        float div = (p + q) / (p * q);
+        printf("rat = %.2f\n", div);
+    }
     return 0;
 }
